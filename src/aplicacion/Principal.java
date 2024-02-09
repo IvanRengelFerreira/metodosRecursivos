@@ -46,9 +46,15 @@ public class Principal {
     Integer tamaño = sc.nextInt();
     sc.nextLine();
     ArrayList<Integer> lista = new ArrayList<>();
-   ;
-    System.out.println("La lista nueva de los numeros pares a partir de la lista dada es "+ Funciones.listaParesOrden(tamaño,lista,0));
+    Funciones.solicitarNumeros(tamaño,lista,sc);
+    ArrayList<Integer> listaParesOrdenada = Funciones.filtrarYOrdenarPares(lista);
+    System.out.println("La lista nueva de los numeros pares a partir de la lista dada es "+listaParesOrdenada);
+    
 
+    System.out.println("Elige un numero");
+    int numero = sc.nextInt();
+    ArrayList<Integer> listaPares = new ArrayList<>();
+    System.out.println("La lista de los numeros pares desde "+numero+" son "+Funciones.listaPar(numero,listaPares));
 
     }
 }
