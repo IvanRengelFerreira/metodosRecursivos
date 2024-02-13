@@ -5,6 +5,19 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Funciones {
+    //Metodos para pedir datos
+    public static int numero() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Elige un numero");
+        
+        return sc.nextInt();
+    }
+
+    public static int tamaño() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Elige el tamaño de la lista");
+        return sc.nextInt();
+    }
 
     // 1
     public static int suma(int n) {
@@ -36,7 +49,7 @@ public class Funciones {
     }
 
     // 4
-    public static Integer listaSuma(Integer tamaño, Scanner sc) {
+    public static Integer listaSuma(int tamaño, Scanner sc) {
 
         ArrayList<Integer> lista = new ArrayList<>();
         if (tamaño > 0) {
@@ -49,7 +62,7 @@ public class Funciones {
     }
 
     // 5
-    public static Integer mediaLista(Integer tamaño, Scanner sc) {
+    public static Integer mediaLista(int tamaño, Scanner sc) {
         ArrayList<Integer> lista = new ArrayList<>();
 
         if (tamaño > 0) {
@@ -60,6 +73,17 @@ public class Funciones {
             return suma / tamaño;
         } else
             return 0;
+    }
+
+    // 6(este aun no esta terminado)
+    public static double desviacionTipica(ArrayList<Integer> lista, Scanner sc, int index, double sum) {
+        if (index == lista.size()) {
+            return Math.sqrt(sum / lista.size());
+        } else {
+            double a = mediaLista(lista, sc);
+            sum += Math.pow(lista.get(index) - a, 2);
+            return desviacionTipica(lista, sc, index + 1, sum);
+        }
     }
 
     // 7
@@ -135,4 +159,29 @@ public class Funciones {
             return lista;
     
     }
+
+    //11
+    public static Integer productoEscalar(ArrayList<Integer> lista1, ArrayList<Integer> lista2, int indice) {
+        indice = indice - 1;
+        if (indice < 0) {
+            return 0; 
+        } else {
+            int numero1 = lista1.get(indice);
+            int numero2 = lista2.get(indice);
+            
+            return numero1 * numero2 + productoEscalar(lista1, lista2, indice - 1);
+        }
+    }
+
+    //12
+    public static int fibonacci(int n){
+        if (n<=1){
+        return n;
+        }else{ 
+        return fibonacci(n-1)+ fibonacci(n-2);
+        }
+    
+    }
+
+    //13
 }
