@@ -1,10 +1,11 @@
 package mates;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
  
 public class FuncionesIterativas {
  
-// Ejercicio 1 suma
+// Ejercicio 1 
  
     public static int suma(int n)
     {
@@ -16,73 +17,77 @@ public class FuncionesIterativas {
         return acumulado;
     }
  
-// Ejercicio 2 Factorial
+// Ejercicio 2 
  
     public static int factorial(int n)
     {
-        if (n == 0)
-        return 1;
-        else
-        return n * factorial(n-1);
+        int acumulado = 1;
+        for(int i = 1; i<=n; i++)
+        {
+            acumulado *= i;
+        }
+        return acumulado;
     }
-// Ejercicio 3 exponente
+// Ejercicio 3 
 public static int potencia(int base, int exponente) {
     if (exponente == 0) {
         return 1;
     } else {
-        return base * potencia(base, exponente - 1);
+        int acumulado = 1;
+        for (int i = 1; i <= exponente; i++) {
+            acumulado *= base;
+        }
+        return acumulado;
     }
 }
  
-// Ejercicio 4 suma lista
+// Ejercicio 4 
  
-    public static int sumaLista(ArrayList<Integer> lista)
+    public static int sumaLista(int tamaño,ArrayList<Integer> lista)
     {
-        if (lista.isEmpty()) {
-            return 0;
+        Scanner sc = new Scanner(System.in);
+        int acumulado = 0;
+        for(int i = 0; i<tamaño; i++)
+        {
+            System.out.println("Elige el numero que quieres agregar");
+            Integer numero = sc.nextInt();
+            lista.add(numero);
+            acumulado += numero;
         }
-        else{
-            return lista.get(0) + sumaLista(new ArrayList<>(lista.subList(1, lista.size())));
-        }
+        return acumulado;
+    }
+    
+       
+//Ejercicio 5 
+ 
+    public static double mediaLista(ArrayList<Integer> lista)
+    {
+        int suma = sumaLista(lista.size(),lista);   
+        return (double) suma / lista.size(); 
     }
  
-//Ejercicio 5 media aritmética de una lista
- 
-    public static double mediaAritm(ArrayList<Integer> lista)
-    {
-        int suma = sumaLista(lista);   //suma de todos los elementos de la lista
-        return (double) suma / lista.size();  // divido la suma de los elementos entre el tamaño de la lista.
-    }
- 
-// Ejercicio 6 desviación típica de una lista
+// Ejercicio 6 
  
     public static double desviacionTipica(ArrayList<Integer> lista) {
-        double a = mediaAritm(lista);
+        double a = mediaLista(lista);
         double raizCuadrada = 0;
-        for (int num : lista) {
-            raizCuadrada += Math.pow(num - a, 2);
+        for (int numero : lista) {
+            raizCuadrada += Math.pow(numero - a, 2);
         }
         return Math.sqrt(raizCuadrada / lista.size());
     }
  
  
-// Ejercicio 7  La suma de los primeros números pares hasta n asumiendo n ≥ 2.
+// Ejercicio 7  
  
     public static int sumaPares(int n)
     {
-        // Caso base. Si n es igual a 2 este es un número par, devuelve 2
-        if (n == 2)
+        int acumulado = 0;
+        for(int i = 2; i<=n; i+=2)
         {
-            return 2;
- 
-        //si n es un número par mayor que 2,
-        //se suma a la llamada recursiva sumaPares(n - 2).sumamos  n con la suma de los números pares menores a n
-        } else if (n % 2 == 0)
-        {
-            return n += sumaPares(n- 2);
-        } else {
-            return sumaPares(n - 1);
+            acumulado += i;
         }
+        return acumulado;
     }
  
 // Ejercicio 8 suma de los elementos pares de una lista de enteros.
@@ -98,9 +103,7 @@ public static int potencia(int base, int exponente) {
         return suma;
     }
  
-// Ejercicio 9 Dada una lista de números naturales mayores o iguales que 2
-// obtiene otra lista con los números pares de la lista inicial, en el mismo
-//orden y respetando los números repetidos
+// Ejercicio 9
  
     public static ArrayList<Integer> listaPares(ArrayList<Integer> lista)
     {
@@ -143,10 +146,12 @@ public static int productoEscalar(ArrayList<Integer> lista1, ArrayList<Integer> 
  
  
 // Ejercicio 12 El elemento n-ésimo de la sucesión de Fibonacci
-public static int Fibo(int nm){
-    if (nm<=1)return nm;
-    else
-    return Fibo(nm-1)+ Fibo(nm-2);
+public static int fibonacci(int n){
+    if (n<=1){
+        return n;
+    }else{
+    return fibonacci(n-1)+ fibonacci(n-2);
+    }
 }
  
  
@@ -158,8 +163,8 @@ public static int Fibo(int nm){
  
 public static  double cocienteFibo()
 {
-    int a = Fibo(16);
-    int b = Fibo(12);
+    int a = fibonacci(16);
+    int b = fibonacci(12);
     return(double) a / b;
 }
  

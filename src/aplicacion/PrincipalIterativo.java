@@ -5,17 +5,14 @@ import java.util.Scanner;
 
 import mates.Funciones;
 
-public class Principal {
-
-    
-   
-    public static void main(String[] args){
+public class PrincipalIterativo {
+     public static void main(String[] args){
 
     Scanner sc = new Scanner(System.in);
 
     //Ejercicio 1
     System.out.println("La suma de los primeros "+Funciones.numero() +" números es: " + Funciones.suma(Funciones.numero()));
-
+    
     //Ejercicio 2
     System.out.println("El factorial de "+Funciones.numero()+" es "+Funciones.factorial(Funciones.numero()));
 
@@ -31,9 +28,7 @@ public class Principal {
     System.out.println("La media de la lista es "+Funciones.mediaLista(Funciones.tamaño(),sc));
 
     //Ejercicio 6
-    ArrayList<Integer> listaDesviacion = new ArrayList<>();
-    System.out.println("La desviación típica de la lista es "+Funciones.desviacionTipica(listaDesviacion, sc, listaDesviacion.size() - 1, 0.0));
-
+    
     //Ejercicio 7
     System.out.println("La suma de los numeros pares desde "+Funciones.numero()+" es "+Funciones.sumaPares(Funciones.numero()));
 
@@ -46,7 +41,6 @@ public class Principal {
     ArrayList<Integer> listaParesOrdenada = Funciones.filtrarYOrdenarPares(lista);
     System.out.println("La lista nueva de los numeros pares a partir de la lista dada es "+listaParesOrdenada);
     
-
     //Ejercicio 10
     ArrayList<Integer> listaPares = new ArrayList<>();
     System.out.println("La lista de los numeros pares desde "+Funciones.numero()+" son "+Funciones.listaPar(Funciones.numero(),listaPares));
@@ -68,5 +62,7 @@ public class Principal {
    
 }
  
+
+
 
 

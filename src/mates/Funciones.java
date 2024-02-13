@@ -62,9 +62,20 @@ public class Funciones {
     }
 
     // 5
-    public static Integer mediaLista(int tamaño, Scanner sc) {
-        ArrayList<Integer> lista = new ArrayList<>();
+    public static Integer mediaLista(int tamaño,ArrayList<Integer> lista, Scanner sc) {
 
+        if (tamaño > 0) {
+            System.out.println("Elige el numero que quieres agregar");
+            Integer numero = sc.nextInt();
+            lista.add(numero);
+            int suma = (numero + listaSuma(tamaño - 1, sc));
+            return suma / tamaño;
+        } else
+            return 0;
+    }
+    public static Integer mediaLista(int tamaño, Scanner sc) {
+
+        ArrayList<Integer> lista = new ArrayList<>();
         if (tamaño > 0) {
             System.out.println("Elige el numero que quieres agregar");
             Integer numero = sc.nextInt();
@@ -76,16 +87,16 @@ public class Funciones {
     }
 
     // 6(este aun no esta terminado)
-    public static double desviacionTipica(ArrayList<Integer> lista, Scanner sc, int index, double sum) {
-        if (index == lista.size()) {
+    public static double desviacionTipica(ArrayList<Integer> lista, Scanner sc, int indice, double sum) {
+        tamaño();
+        double a = mediaLista(tamaño(),lista, sc);
+        if (indice <= 0) {
             return Math.sqrt(sum / lista.size());
         } else {
-            double a = mediaLista(lista, sc);
-            sum += Math.pow(lista.get(index) - a, 2);
-            return desviacionTipica(lista, sc, index + 1, sum);
+            sum += Math.pow(lista.get(indice-1) - a, 2);
+            return desviacionTipica(lista, sc, indice - 1, sum);
         }
     }
-
     // 7
     public static int sumaPares(int n) {
 
