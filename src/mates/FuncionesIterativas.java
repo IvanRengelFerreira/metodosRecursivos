@@ -77,14 +77,14 @@ public static int potencias(int base, int exponente) {
  
 // Ejercicio 6 
  
-    public static double desviacionTipica(ArrayList<Integer> lista, Scanner sc, int tamaño, double acumulado) {
-        double media = mediaLista(tamaño,sc,lista);
-        double raizCuadrada = 0;
-        for (int numero : lista) {
-            raizCuadrada += Math.pow(numero - media, 2);
-        }
-        return Math.sqrt(raizCuadrada / lista.size());
-    }
+    // public static double desviacionTipica(ArrayList<Integer> lista, Scanner sc, int tamaño, double acumulado) {
+    //     double media = mediaLista(tamaño,sc,lista);
+    //     double raizCuadrada = 0;
+    //     for (int numero : lista) {
+    //         raizCuadrada += Math.pow(numero - media, 2);
+    //     }
+    //     return Math.sqrt(raizCuadrada / lista.size());
+    // }
  
  
 // Ejercicio 7  

@@ -34,8 +34,8 @@ public class Principal {
     System.out.println("La media de la lista es "+Funciones.mediaLista(Funciones.tamaño(),sc));
 
     //Ejercicio 6
-    ArrayList<Integer> listaDesviacion = new ArrayList<>();
-    System.out.println("La desviación típica de la lista es "+Funciones.desviacionTipica(listaDesviacion, sc, listaDesviacion.size() - 1, 0.0));
+    // ArrayList<Integer> listaDesviacion = new ArrayList<>();
+    // System.out.println("La desviación típica de la lista es "+Funciones.desviacionTipica(listaDesviacion, sc, listaDesviacion.size() - 1, 0.0));
 
     //Ejercicio 7
     num1 = Funciones.numero();

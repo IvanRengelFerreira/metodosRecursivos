@@ -22,26 +22,28 @@ public class PrincipalIterativo {
     //Ejercicio 3
     System.out.println("Elige el numero por el que lo potencias");
     int potencia = sc.nextInt();
-    System.out.println(FuncionesIterativas.numero()+" a la "+potencia+" es "+FuncionesIterativas.potencias(potencia, FuncionesIterativas.numero()));
+    num = Funciones.numero();
+    System.out.println(num+" a la "+potencia+" es "+FuncionesIterativas.potencias(potencia,num));
 
     //Ejercicio 4
     ArrayList<Integer> lista = new ArrayList<>();
-    System.out.println("La suma de la lista es "+FuncionesIterativas.listaSuma(Funciones.tamaño(),lista,sc));
+    System.out.println("La suma de la lista es "+FuncionesIterativas.listaSuma(FuncionesIterativas.tamaño(),lista,sc));
 
     //Ejercicio 5
     ArrayList<Integer> listaMedia = new ArrayList<>();
     System.out.println("La media de la lista es "+FuncionesIterativas.mediaLista(FuncionesIterativas.tamaño(),sc,listaMedia));
 
-    //Ejercicio 6
-    ArrayList<Integer> listaDesviacion = new ArrayList<>();
-    System.out.println("La desviación típica de la lista es "+FuncionesIterativas.desviacionTipica(listaDesviacion, sc, listaDesviacion.size() - 1, 0.0));
-    
+    // //Ejercicio 6
+    // ArrayList<Integer> listaDesviacion = new ArrayList<>();
+    // System.out.println("La desviación típica de la lista es "+FuncionesIterativas.desviacionTipica(listaDesviacion, sc, listaDesviacion.size() - 1, 0.0));
+
     //Ejercicio 7
-    System.out.println("La suma de los numeros pares desde "+FuncionesIterativas.numero()+" es "+FuncionesIterativas.sumaPares(FuncionesIterativas.numero()));
+    num = FuncionesIterativas.numero();
+    System.out.println("La suma de los numeros pares desde "+num+" es "+FuncionesIterativas.sumaPares(num));
 
     //Ejercicio 8
     ArrayList<Integer> listaPares = new ArrayList<>();
-    System.out.println("La suma de los numeros pares dentro de la lista son "+FuncionesIterativas.listaSumaPares(potencia, listaPares, sc));
+    System.out.println("La suma de los numeros pares dentro de la lista son "+FuncionesIterativas.listaSumaPares(FuncionesIterativas.tamaño(), listaPares, sc));
 
     //Ejercicio 9
     ArrayList<Integer> lista1 = new ArrayList<>();
@@ -50,7 +52,8 @@ public class PrincipalIterativo {
     System.out.println("La lista nueva de los numeros pares a partir de la lista dada es "+lista2);
     
     //Ejercicio 10
-    System.out.println("La lista de los numeros pares desde "+FuncionesIterativas.numero()+" son "+FuncionesIterativas.listaPar(FuncionesIterativas.numero()));
+    num = FuncionesIterativas.numero();
+    System.out.println("La lista de los numeros pares desde "+num+" son "+FuncionesIterativas.listaPar(num));
     
     //Ejercicio 11
     ArrayList<Integer> listaProducto = new ArrayList<>();
