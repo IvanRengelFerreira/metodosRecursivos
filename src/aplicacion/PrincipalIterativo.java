@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import mates.Funciones;
+import mates.FuncionesIterativas;
 
 public class PrincipalIterativo {
      public static void main(String[] args){
@@ -11,49 +12,55 @@ public class PrincipalIterativo {
     Scanner sc = new Scanner(System.in);
 
     //Ejercicio 1
-    System.out.println("La suma de los primeros "+Funciones.numero() +" números es: " + Funciones.suma(Funciones.numero()));
+    int num = FuncionesIterativas.numero();
+    System.out.println("La suma de los primeros "+num +" números es: " + FuncionesIterativas.suma(num));
     
     //Ejercicio 2
-    System.out.println("El factorial de "+Funciones.numero()+" es "+Funciones.factorial(Funciones.numero()));
+    num = FuncionesIterativas.numero();
+    System.out.println("El factorial de "+num+" es "+FuncionesIterativas.factorial(num));
 
     //Ejercicio 3
     System.out.println("Elige el numero por el que lo potencias");
     int potencia = sc.nextInt();
-    System.out.println(Funciones.numero()+" a la "+potencia+" es "+Funciones.potencias(potencia, Funciones.numero()));
+    System.out.println(FuncionesIterativas.numero()+" a la "+potencia+" es "+FuncionesIterativas.potencias(potencia, FuncionesIterativas.numero()));
 
     //Ejercicio 4
-    System.out.println("La suma de la lista es "+Funciones.listaSuma(Funciones.tamaño(),sc));
+    ArrayList<Integer> lista = new ArrayList<>();
+    System.out.println("La suma de la lista es "+FuncionesIterativas.listaSuma(Funciones.tamaño(),lista,sc));
 
     //Ejercicio 5
-    System.out.println("La media de la lista es "+Funciones.mediaLista(Funciones.tamaño(),sc));
+    ArrayList<Integer> listaMedia = new ArrayList<>();
+    System.out.println("La media de la lista es "+FuncionesIterativas.mediaLista(FuncionesIterativas.tamaño(),sc,listaMedia));
 
     //Ejercicio 6
+    ArrayList<Integer> listaDesviacion = new ArrayList<>();
+    System.out.println("La desviación típica de la lista es "+FuncionesIterativas.desviacionTipica(listaDesviacion, sc, listaDesviacion.size() - 1, 0.0));
     
     //Ejercicio 7
-    System.out.println("La suma de los numeros pares desde "+Funciones.numero()+" es "+Funciones.sumaPares(Funciones.numero()));
+    System.out.println("La suma de los numeros pares desde "+FuncionesIterativas.numero()+" es "+FuncionesIterativas.sumaPares(FuncionesIterativas.numero()));
 
     //Ejercicio 8
-    System.out.println("La suma de los numeros pares dentro de la lista son "+Funciones.listaSumaPares(Funciones.tamaño(),sc));
+    ArrayList<Integer> listaPares = new ArrayList<>();
+    System.out.println("La suma de los numeros pares dentro de la lista son "+FuncionesIterativas.listaSumaPares(potencia, listaPares, sc));
 
     //Ejercicio 9
-    ArrayList<Integer> lista = new ArrayList<>();
-    Funciones.solicitarNumeros(Funciones.tamaño(),lista,sc);
-    ArrayList<Integer> listaParesOrdenada = Funciones.filtrarYOrdenarPares(lista);
-    System.out.println("La lista nueva de los numeros pares a partir de la lista dada es "+listaParesOrdenada);
+    ArrayList<Integer> lista1 = new ArrayList<>();
+    FuncionesIterativas.solicitarNumeros(FuncionesIterativas.tamaño(),lista1,sc);
+    ArrayList<Integer> lista2 = FuncionesIterativas.filtrarYOrdenarPares(lista1);
+    System.out.println("La lista nueva de los numeros pares a partir de la lista dada es "+lista2);
     
     //Ejercicio 10
-    ArrayList<Integer> listaPares = new ArrayList<>();
-    System.out.println("La lista de los numeros pares desde "+Funciones.numero()+" son "+Funciones.listaPar(Funciones.numero(),listaPares));
+    System.out.println("La lista de los numeros pares desde "+FuncionesIterativas.numero()+" son "+FuncionesIterativas.listaPar(FuncionesIterativas.numero()));
     
     //Ejercicio 11
     ArrayList<Integer> listaProducto = new ArrayList<>();
     ArrayList<Integer> listaProducto2 = new ArrayList<>();
-    Funciones.solicitarNumeros(Funciones.tamaño(), listaProducto, sc);
-    Funciones.solicitarNumeros(Funciones.tamaño(), listaProducto2, sc);
-    System.out.println("El producto escalar de las listas es: "+Funciones.productoEscalar(listaProducto,listaProducto2,Funciones.tamaño()));
+    FuncionesIterativas.solicitarNumeros(FuncionesIterativas.tamaño(), listaProducto, sc);
+    FuncionesIterativas.solicitarNumeros(FuncionesIterativas.tamaño(), listaProducto2, sc);
+    System.out.println("El producto escalar de las listas es: "+FuncionesIterativas.productoEscalar(listaProducto,listaProducto2));
 
     //Ejercicio 12
-    System.out.println("El numero n-esimo de la serie de fibonacci es: "+Funciones.fibonacci(Funciones.numero()));
+    System.out.println("El numero n-esimo de la serie de fibonacci es: "+FuncionesIterativas.fibonacci(FuncionesIterativas.numero()));
 
     
 

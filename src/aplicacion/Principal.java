@@ -14,15 +14,18 @@ public class Principal {
     Scanner sc = new Scanner(System.in);
 
     //Ejercicio 1
-    System.out.println("La suma de los primeros "+Funciones.numero() +" números es: " + Funciones.suma(Funciones.numero()));
+   int num1 = Funciones.numero();
+    System.out.println("La suma de los primeros "+num1+" números es: " + Funciones.suma(num1));
 
     //Ejercicio 2
-    System.out.println("El factorial de "+Funciones.numero()+" es "+Funciones.factorial(Funciones.numero()));
+    num1 = Funciones.numero();
+    System.out.println("El factorial de "+num1+" es "+Funciones.factorial(num1));
 
     //Ejercicio 3
     System.out.println("Elige el numero por el que lo potencias");
     int potencia = sc.nextInt();
-    System.out.println(Funciones.numero()+" a la "+potencia+" es "+Funciones.potencias(potencia, Funciones.numero()));
+    num1 = Funciones.numero();
+    System.out.println(num1+" a la "+potencia+" es "+Funciones.potencias(potencia,num1));
 
     //Ejercicio 4
     System.out.println("La suma de la lista es "+Funciones.listaSuma(Funciones.tamaño(),sc));
@@ -35,7 +38,8 @@ public class Principal {
     System.out.println("La desviación típica de la lista es "+Funciones.desviacionTipica(listaDesviacion, sc, listaDesviacion.size() - 1, 0.0));
 
     //Ejercicio 7
-    System.out.println("La suma de los numeros pares desde "+Funciones.numero()+" es "+Funciones.sumaPares(Funciones.numero()));
+    num1 = Funciones.numero();
+    System.out.println("La suma de los numeros pares desde "+num1+" es "+Funciones.sumaPares(num1));
 
     //Ejercicio 8
     System.out.println("La suma de los numeros pares dentro de la lista son "+Funciones.listaSumaPares(Funciones.tamaño(),sc));
@@ -49,7 +53,8 @@ public class Principal {
 
     //Ejercicio 10
     ArrayList<Integer> listaPares = new ArrayList<>();
-    System.out.println("La lista de los numeros pares desde "+Funciones.numero()+" son "+Funciones.listaPar(Funciones.numero(),listaPares));
+    num1 = Funciones.numero();
+    System.out.println("La lista de los numeros pares desde "+num1+" son "+Funciones.listaPar(num1,listaPares));
     
     //Ejercicio 11
     ArrayList<Integer> listaProducto = new ArrayList<>();
