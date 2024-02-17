@@ -165,18 +165,8 @@ public static int productoEscalar(ArrayList<Integer> lista1, ArrayList<Integer> 
 }
  
  
-// Ejercicio 12 
 
-public static int fibonacci(int n){
-    if (n<=1){
-        return n;
-    }else{
-    return fibonacci(n-1)+ fibonacci(n-2);
-    }
-}
  
-
-
  
 }
  
